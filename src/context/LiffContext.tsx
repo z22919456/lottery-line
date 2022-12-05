@@ -21,7 +21,8 @@ const LiffProvider = ({ children }: Props) => {
     (async () => {
       // @ts-ignore
       const liff: Liff = await import('@line/liff');
-      await liff.init({ liffId: process.env.PUBLIC_NEXT_BINDING_LIFF as string });
+      console.log({ id: process.env.NEXT_PUBLIC_BINDING_LIFF });
+      await liff.init({ liffId: process.env.NEXT_PUBLIC_BINDING_LIFF as string });
       await liff.login();
       setLiffObject(liff);
     })()
